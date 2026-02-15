@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "害虫図鑑 — 身近な害虫を知って正しく対策",
   description:
-    "ゴキブリ、蚊、ダニ、ハチなど身近な害虫15種をイラスト付きで徹底解説。特徴・豆知識・対策法をわかりやすく紹介する害虫図鑑サイト。",
+    "ゴキブリ、蚊、ダニ、ハチなど身近な害虫50種以上をイラスト付きで徹底解説。特徴・豆知識・対策法をわかりやすく紹介する害虫図鑑サイト。",
 };
 
 export default function RootLayout({
