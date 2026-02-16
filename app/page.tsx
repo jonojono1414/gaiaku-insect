@@ -3,10 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { pests, categories } from "./data/pests";
 import PestCard from "./components/PestCard";
-import ToggleButton from "./components/ToggleButton";
 
 export default function Home() {
-  const [isPhoto, setIsPhoto] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const gridRef = useRef<HTMLDivElement>(null);
@@ -62,7 +60,7 @@ export default function Home() {
           🐝 害虫図鑑
         </h1>
         <p className="relative mt-3 text-lg font-medium text-emerald-100">
-          あまり不快にならない害虫図鑑 — {pests.length}種の害虫を収録
+          あまり不快にならない憎めない害虫図鑑
         </p>
 
         {/* Search */}
@@ -118,8 +116,6 @@ export default function Home() {
             })}
           </div>
 
-          {/* Toggle */}
-          <ToggleButton isPhoto={isPhoto} onToggle={() => setIsPhoto(!isPhoto)} />
         </div>
 
         {/* Result count */}
@@ -140,7 +136,7 @@ export default function Home() {
               className="scroll-fade-in-up"
               style={{ animationDelay: `${Math.min(index * 0.06, 0.6)}s` }}
             >
-              <PestCard pest={pest} isPhoto={isPhoto} />
+              <PestCard pest={pest} />
             </div>
           ))}
         </div>

@@ -6,7 +6,6 @@ import PestSvg from "./PestSvg";
 
 type Props = {
   pest: Pest;
-  isPhoto: boolean;
 };
 
 const dangerLabel = (level: number) => {
@@ -29,18 +28,12 @@ const categoryColors: Record<string, string> = {
   other: "bg-yellow-500 text-white",
 };
 
-export default function PestCard({ pest, isPhoto }: Props) {
+export default function PestCard({ pest }: Props) {
   return (
     <Link href={`/pests/${pest.id}`}>
       <div className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
         <div className="relative flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-5">
-          {isPhoto ? (
-            <div className="flex h-[160px] w-[160px] items-center justify-center rounded-xl bg-gray-200 text-gray-400">
-              <span className="text-center text-sm">📷 写真準備中</span>
-            </div>
-          ) : (
-            <PestSvg id={pest.id} size={160} />
-          )}
+          <PestSvg id={pest.id} size={160} />
           {/* Danger badge */}
           {pest.danger >= 4 && (
             <span className="absolute right-3 top-3 rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
