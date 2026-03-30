@@ -93,72 +93,72 @@ body {
   50% { transform: translateY(-4px); }
 }
 
-/* Apply animations on hover via parent .group */
-.group:hover .pest-antenna-l {
+/* Apply animations on hover via parent .group (only when hover-animate is active) */
+.hover-animate .group:hover .pest-antenna-l {
   animation: antenna-sway 0.6s ease-in-out infinite;
   transform-origin: bottom right;
 }
-.group:hover .pest-antenna-r {
+.hover-animate .group:hover .pest-antenna-r {
   animation: antenna-sway 0.6s ease-in-out infinite reverse;
   transform-origin: bottom left;
 }
-.group:hover .pest-wing-l {
+.hover-animate .group:hover .pest-wing-l {
   animation: wing-flutter 0.15s ease-in-out infinite;
   transform-origin: right center;
 }
-.group:hover .pest-wing-r {
+.hover-animate .group:hover .pest-wing-r {
   animation: wing-flutter 0.15s ease-in-out infinite;
   transform-origin: left center;
 }
-.group:hover .pest-moth-wing-l {
+.hover-animate .group:hover .pest-moth-wing-l {
   animation: moth-flap 0.8s ease-in-out infinite;
   transform-origin: right center;
 }
-.group:hover .pest-moth-wing-r {
+.hover-animate .group:hover .pest-moth-wing-r {
   animation: moth-flap 0.8s ease-in-out infinite;
   transform-origin: left center;
 }
-.group:hover .pest-leg-l {
+.hover-animate .group:hover .pest-leg-l {
   animation: leg-wiggle 0.4s ease-in-out infinite;
   transform-origin: right top;
 }
-.group:hover .pest-leg-r {
+.hover-animate .group:hover .pest-leg-r {
   animation: leg-wiggle 0.4s ease-in-out infinite reverse;
   transform-origin: left top;
 }
-.group:hover .pest-body {
+.hover-animate .group:hover .pest-body {
   animation: body-pulse 1s ease-in-out infinite;
   transform-origin: center;
 }
-.group:hover .pest-jump {
+.hover-animate .group:hover .pest-jump {
   animation: flea-jump 0.6s ease-in-out infinite;
 }
-.group:hover .pest-undulate {
+.hover-animate .group:hover .pest-undulate {
   animation: undulate 0.5s ease-in-out infinite;
 }
-.group:hover .pest-stinger {
+.hover-animate .group:hover .pest-stinger {
   animation: stinger-throb 0.4s ease-in-out infinite;
   transform-origin: top center;
 }
-.group:hover .pest-crawl {
+.hover-animate .group:hover .pest-crawl {
   animation: crawl-shift 0.8s ease-in-out infinite;
 }
-.group:hover .pest-stink {
+.hover-animate .group:hover .pest-stink {
   animation: stink-spray 1s ease-in-out infinite;
 }
-.group:hover .pest-proboscis {
+.hover-animate .group:hover .pest-proboscis {
   animation: proboscis-poke 0.5s ease-in-out infinite;
 }
 
 /* Undulate with staggered delay for centipede segments */
-.group:hover .pest-seg-1 { animation: undulate 0.6s 0s ease-in-out infinite; }
-.group:hover .pest-seg-2 { animation: undulate 0.6s 0.05s ease-in-out infinite; }
-.group:hover .pest-seg-3 { animation: undulate 0.6s 0.1s ease-in-out infinite; }
-.group:hover .pest-seg-4 { animation: undulate 0.6s 0.15s ease-in-out infinite; }
-.group:hover .pest-seg-5 { animation: undulate 0.6s 0.2s ease-in-out infinite; }
-.group:hover .pest-seg-6 { animation: undulate 0.6s 0.25s ease-in-out infinite; }
-.group:hover .pest-seg-7 { animation: undulate 0.6s 0.3s ease-in-out infinite; }
-.group:hover .pest-seg-8 { animation: undulate 0.6s 0.35s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-1 { animation: undulate 0.6s 0s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-2 { animation: undulate 0.6s 0.05s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-3 { animation: undulate 0.6s 0.1s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-4 { animation: undulate 0.6s 0.15s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-5 { animation: undulate 0.6s 0.2s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-6 { animation: undulate 0.6s 0.25s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-7 { animation: undulate 0.6s 0.3s ease-in-out infinite; }
+.hover-animate .group:hover .pest-seg-8 { animation: undulate 0.6s 0.35s ease-in-out infinite; }
 
 /* Always-on animations for detail page */
 .always-animate .pest-antenna-l {

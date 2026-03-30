@@ -10,6 +10,7 @@ export default function Home() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [hoverAnimate, setHoverAnimate] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = pests
@@ -123,6 +124,25 @@ export default function Home() {
             })}
           </div>
 
+          {/* Hover animation toggle */}
+          <button
+            onClick={() => setHoverAnimate((v) => !v)}
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold shadow transition-all ${
+              hoverAnimate
+                ? "bg-emerald-500 text-white"
+                : "bg-white text-gray-600 hover:bg-gray-100"
+            }`}
+          >
+            <span className="relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-200"
+              style={{ backgroundColor: hoverAnimate ? "#34d399" : "#d1d5db" }}
+            >
+              <span
+                className="inline-block h-3.5 w-3.5 rounded-full bg-white shadow transition-transform duration-200"
+                style={{ transform: hoverAnimate ? "translateX(17px)" : "translateX(3px)" }}
+              />
+            </span>
+            ホバーで動く
+          </button>
         </div>
 
         {/* Result count */}
@@ -135,7 +155,9 @@ export default function Home() {
         {/* Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4${
+            hoverAnimate ? " hover-animate" : ""
+          }`}
         >
           {filtered.map((pest, index) => (
             <div
