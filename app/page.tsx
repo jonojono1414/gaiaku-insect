@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { pests, categories } from "./data/pests";
 import PestCard from "./components/PestCard";
 import HeroBackground from "./components/HeroBackground";
@@ -10,7 +10,20 @@ export default function Home() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [search, setSearch] = useState("");
-  const [hoverAnimate, setHoverAnimate] = useState(false);
+  const [hoverAnimate, setHoverAnimate] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("hoverAnimate") === "true";
+    }
+    return false;
+  });
+
+  const toggleHoverAnimate = useCallback(() => {
+    setHoverAnimate((v) => {
+      const next = !v;
+      localStorage.setItem("hoverAnimate", String(next));
+      return next;
+    });
+  }, []);
   const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = pests
@@ -126,7 +139,7 @@ export default function Home() {
 
           {/* Hover animation toggle */}
           <button
-            onClick={() => setHoverAnimate((v) => !v)}
+            onClick={toggleHoverAnimate}
             className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold shadow transition-all ${
               hoverAnimate
                 ? "bg-emerald-500 text-white"

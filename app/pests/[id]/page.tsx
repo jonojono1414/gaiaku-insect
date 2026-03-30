@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pests } from "../../data/pests";
-import PestSvg from "../../components/PestSvg";
+import AnimatedPestSvg from "../../components/AnimatedPestSvg";
 import RadarChart from "../../components/RadarChart";
 import { Bug, BarChart3, FileText, Lightbulb, ShieldAlert, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -60,8 +60,8 @@ export default async function PestDetail({ params }: Props) {
         <div className="overflow-hidden rounded-3xl bg-white shadow-lg">
           <div className="flex flex-col md:flex-row">
             {/* SVG - always animated */}
-            <div className="always-animate flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-8 md:w-1/2">
-              <PestSvg id={pest.id} size={250} />
+            <div className="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-8 md:w-1/2">
+              <AnimatedPestSvg id={pest.id} size={250} />
             </div>
             {/* Basic Info */}
             <div className="p-6 md:w-1/2 md:p-8">
